@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# PyCharm
+.idea/
+*.iml
+
+# Environment files
+.env
+.venv/
+venv/
+
+# Log files
+*.log
