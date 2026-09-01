@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="course_form_view" model="ir.ui.view">
+            <field name="name">course_center.course.form</field>
+            <field name="model">course_center.course</field>
+            <field name="arch" type="xml">
+                <form string="Course">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Course Name"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="category_id"/>
+                                <field name="total_hours"/>
+                                <field name="duration_weeks"/>
+                            </group>
+
+                            <group>
+                                <field name="price"/>
+                                <field name="certificate_min_points"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="course_tree_view" model="ir.ui.view">
+            <field name="name">course_center.course.tree</field>
+            <field name="model">course_center.course</field>
+            <field name="arch" type="xml">
+                <tree string="Course">
+                    <field name="name"/>
+                    <field name="category_id"/>
+                    <field name="total_hours"/>
+                    <field name="duration_weeks"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="course_search_view" model="ir.ui.view">
+            <field name="name">course_center.course.search</field>
+            <field name="model">course_center.course</field>
+            <field name="arch" type="xml">
+                <search string="Course">
+                    <field name="name"/>
+                    <field name="category_id"/>
+                    <field name="duration_weeks"/>
+                    <field name="price"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="course_act_window" model="ir.actions.act_window">
+            <field name="name">Courses</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">course_center.course</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There are no courses. Click here to add a new course.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

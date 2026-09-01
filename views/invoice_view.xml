@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="invoice_form_view" model="ir.ui.view">
+            <field name="name">course_center.invoice.form</field>
+            <field name="model">course_center.invoice</field>
+            <field name="arch" type="xml">
+                <form string="Invoice">
+
+                    <header>
+                        <button name="open_invoice"
+                                type="object"
+                                string="Open"
+                                invisible="status != 'draft'"/>
+
+                        <button name="pay_invoice"
+                                type="object"
+                                string="Pay"
+                                invisible="status != 'open'"/>
+
+                        <button name="cancel_invoice"
+                                type="object"
+                                string="Cancel"
+                                invisible="status == 'paid' or status == 'cancelled'"/>
+
+                        <field name="status" widget="statusbar"/>
+                    </header>
+
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="enrollment_id"/>
+                            <h1>
+                                <field name="enrollment_id" placeholder="Enrollment"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="invoice_date"/>
+                                <field name="due_date"/>
+                            </group>
+
+                            <group>
+                                <field name="notes"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page name="payments" string="Payments">
+                                <field name="payment_ids">
+                                    <tree editable="bottom">
+                                        <field name="payment_date"/>
+                                        <field name="amount"/>
+                                        <field name="payment_method"/>
+                                        <field name="status"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="invoice_tree_view" model="ir.ui.view">
+            <field name="name">course_center.invoice.tree</field>
+            <field name="model">course_center.invoice</field>
+            <field name="arch" type="xml">
+                <tree string="Invoice">
+                    <field name="enrollment_id"/>
+                    <field name="invoice_date"/>
+                    <field name="due_date"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="invoice_search_view" model="ir.ui.view">
+            <field name="name">course_center.invoice.search</field>
+            <field name="model">course_center.invoice</field>
+            <field name="arch" type="xml">
+                <search string="Invoice">
+                    <field name="enrollment_id"/>
+                    <field name="invoice_date"/>
+                    <field name="due_date"/>
+                    <field name="status"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="invoice_act_window" model="ir.actions.act_window">
+            <field name="name">Invoices</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">course_center.invoice</field>
+            <field name="view_mode">tree,form</field>
+
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There are no invoices. Click here to add a new invoice.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

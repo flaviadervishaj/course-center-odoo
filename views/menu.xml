@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Main application menu -->
+        <menuitem id="course_center_root"
+                  name="Course Center"
+                  sequence="10"/>
+
+        <!-- USERS -->
+        <menuitem id="users_section_menu"
+                  name="People"
+                  parent="course_center_root"
+                  sequence="10"/>
+
+        <menuitem id="student_menu"
+                  name="Students"
+                  parent="users_section_menu"
+                  action="student_act_window"
+                  sequence="10"/>
+
+        <menuitem id="instructor_menu"
+                  name="Instructors"
+                  parent="users_section_menu"
+                  action="instructor_act_window"
+                  sequence="20"/>
+
+        <!-- COURSES -->
+        <menuitem id="courses_section_menu"
+                  name="Courses"
+                  parent="course_center_root"
+                  sequence="20"/>
+
+        <menuitem id="course_menu"
+                  name="Courses"
+                  parent="courses_section_menu"
+                  action="course_act_window"
+                  sequence="10"/>
+
+        <menuitem id="course_group_menu"
+                  name="Course Groups"
+                  parent="courses_section_menu"
+                  action="course_group_act_window"
+                  sequence="20"/>
+
+        <menuitem id="course_session_menu"
+                  name="Course Sessions"
+                  parent="courses_section_menu"
+                  action="course_session_act_window"
+                  sequence="30"/>
+
+        <menuitem id="assignment_menu"
+                  name="Assignments"
+                  parent="courses_section_menu"
+                  action="assignment_act_window"
+                  sequence="40"/>
+
+        <!-- MANAGEMENT -->
+        <menuitem id="management_section_menu"
+                  name="Management"
+                  parent="course_center_root"
+                  sequence="30"/>
+
+        <menuitem id="enrollment_menu"
+                  name="Enrollments"
+                  parent="management_section_menu"
+                  action="enrollment_act_window"
+                  sequence="10"/>
+
+        <menuitem id="attendance_menu"
+                  name="Attendance"
+                  parent="management_section_menu"
+                  action="attendance_act_window"
+                  sequence="20"/>
+
+        <menuitem id="submission_menu"
+                  name="Submissions"
+                  parent="management_section_menu"
+                  action="submission_act_window"
+                  sequence="30"/>
+
+        <menuitem id="certificate_menu"
+                  name="Certificates"
+                  parent="management_section_menu"
+                  action="certificate_act_window"
+                  sequence="40"/>
+
+        <!-- FINANCE -->
+        <menuitem id="finance_section_menu"
+                  name="Finance"
+                  parent="course_center_root"
+                  sequence="40"/>
+
+        <menuitem id="invoice_menu"
+                  name="Invoices"
+                  parent="finance_section_menu"
+                  action="invoice_act_window"
+                  sequence="10"/>
+
+        <menuitem id="payment_menu"
+                  name="Payments"
+                  parent="finance_section_menu"
+                  action="payment_act_window"
+                  sequence="20"/>
+
+        <!-- CONFIGURATION -->
+        <menuitem id="configuration_menu"
+                  name="Configuration"
+                  parent="course_center_root"
+                  sequence="50"/>
+
+        <menuitem id="course_category_menu"
+                  name="Course Categories"
+                  parent="configuration_menu"
+                  action="course_category_act_window"
+                  sequence="10"/>
+
+        <menuitem id="room_menu"
+                  name="Rooms"
+                  parent="configuration_menu"
+                  action="room_act_window"
+                  sequence="20"/>
+
+        <menuitem id="discount_rule_menu"
+                  name="Discount Rules"
+                  parent="configuration_menu"
+                  action="discount_rule_act_window"
+                  sequence="30"/>
+
+    </data>
+</odoo>

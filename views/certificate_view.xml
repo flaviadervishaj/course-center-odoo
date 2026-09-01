@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="certificate_form_view" model="ir.ui.view">
+            <field name="name">course_center.certificate.form</field>
+            <field name="model">course_center.certificate</field>
+            <field name="arch" type="xml">
+                <form string="Certificate">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="certificate_number"/>
+                            <h1>
+                                <field name="certificate_number"
+                                       placeholder="Certificate Number"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="enrollment_id"/>
+                                <field name="issue_date"/>
+                            </group>
+
+                            <group>
+                                <field name="file_path"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="certificate_tree_view" model="ir.ui.view">
+            <field name="name">course_center.certificate.tree</field>
+            <field name="model">course_center.certificate</field>
+            <field name="arch" type="xml">
+                <tree string="Certificate">
+                    <field name="certificate_number"/>
+                    <field name="enrollment_id"/>
+                    <field name="issue_date"/>
+                    <field name="file_path"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="certificate_search_view" model="ir.ui.view">
+            <field name="name">course_center.certificate.search</field>
+            <field name="model">course_center.certificate</field>
+            <field name="arch" type="xml">
+                <search string="Certificate">
+                    <field name="certificate_number"/>
+                    <field name="enrollment_id"/>
+                    <field name="issue_date"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="certificate_act_window" model="ir.actions.act_window">
+            <field name="name">Certificates</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">course_center.certificate</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There are no certificates. Click here to add a new certificate.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

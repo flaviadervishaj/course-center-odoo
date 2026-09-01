@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="instructor_form_view" model="ir.ui.view">
+            <field name="name">course_center.instructor.form</field>
+            <field name="model">course_center.instructor</field>
+            <field name="arch" type="xml">
+                <form string="Instructor">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="user_id"/>
+                            <h1>
+                                <field name="user_id" placeholder="Instructor"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="specialization"/>
+                            </group>
+
+                            <group>
+                                <field name="hire_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="instructor_tree_view" model="ir.ui.view">
+            <field name="name">course_center.instructor.tree</field>
+            <field name="model">course_center.instructor</field>
+            <field name="arch" type="xml">
+                <tree string="Instructor">
+                    <field name="user_id"/>
+                    <field name="specialization"/>
+                    <field name="hire_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="instructor_search_view" model="ir.ui.view">
+            <field name="name">course_center.instructor.search</field>
+            <field name="model">course_center.instructor</field>
+            <field name="arch" type="xml">
+                <search string="Instructor">
+                    <field name="user_id"/>
+                    <field name="specialization"/>
+                    <field name="hire_date"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="instructor_act_window" model="ir.actions.act_window">
+            <field name="name">Instructors</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">course_center.instructor</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There are no instructors. Click here to add a new instructor.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

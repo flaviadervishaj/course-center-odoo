@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="enrollment_form_view" model="ir.ui.view">
+            <field name="name">course_center.enrollment.form</field>
+            <field name="model">course_center.enrollment</field>
+            <field name="arch" type="xml">
+                <form string="Enrollment">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="student_id"/>
+                            <h1>
+                                <field name="student_id" placeholder="Student"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="group_id"/>
+                                <field name="rule_id"/>
+                                <field name="enrollment_date"/>
+                                <field name="status"/>
+                            </group>
+
+                            <group>
+                                <field name="original_price"/>
+                                <field name="discount_amount"/>
+                                <field name="final_price"/>
+                                <field name="payment_plan"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <field name="notes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="enrollment_tree_view" model="ir.ui.view">
+            <field name="name">course_center.enrollment.tree</field>
+            <field name="model">course_center.enrollment</field>
+            <field name="arch" type="xml">
+                <tree string="Enrollment">
+                    <field name="student_id"/>
+                    <field name="group_id"/>
+                    <field name="enrollment_date"/>
+                    <field name="final_price"/>
+                    <field name="payment_plan"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="enrollment_search_view" model="ir.ui.view">
+            <field name="name">course_center.enrollment.search</field>
+            <field name="model">course_center.enrollment</field>
+            <field name="arch" type="xml">
+                <search string="Enrollment">
+                    <field name="student_id"/>
+                    <field name="group_id"/>
+                    <field name="enrollment_date"/>
+                    <field name="payment_plan"/>
+                    <field name="status"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="enrollment_act_window" model="ir.actions.act_window">
+            <field name="name">Enrollments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">course_center.enrollment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There are no enrollments. Click here to add a new enrollment.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

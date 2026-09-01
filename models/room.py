@@ -1,12 +1,18 @@
-from odoo import fields,models,api
+from odoo import fields, models, api
 
-class Room(models.Model):
+
+class CourseCenterRoom(models.Model):
     _name = 'course_center.room'
 
-    name = fields.Char(string='Room Name')
+    name = fields.Char(string='Room Name', required=True)
     capacity = fields.Integer(string='Capacity')
 
-    status = fields.Selection([
-        ('active','Active'),
-        ('inactive','Inactive'),
-    ], string='Status' , default='active' )
+    status = fields.Selection(
+        string='Status',
+        required=True,
+        default='active',
+        selection=[
+            ('active', 'Active'),
+            ('inactive', 'Inactive')
+        ]
+    )

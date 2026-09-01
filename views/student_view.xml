@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="student_form_view" model="ir.ui.view">
+            <field name="name">course_center.student.form</field>
+            <field name="model">course_center.student</field>
+            <field name="arch" type="xml">
+                <form string="Student">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="user_id"/>
+                            <h1>
+                                <field name="user_id" placeholder="Student"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="date_of_birth"/>
+                                <field name="gender"/>
+                            </group>
+
+                            <group>
+                                <field name="address"/>
+                                <field name="registration_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="student_tree_view" model="ir.ui.view">
+            <field name="name">course_center.student.tree</field>
+            <field name="model">course_center.student</field>
+            <field name="arch" type="xml">
+                <tree string="Student">
+                    <field name="user_id"/>
+                    <field name="gender"/>
+                    <field name="registration_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="student_search_view" model="ir.ui.view">
+            <field name="name">course_center.student.search</field>
+            <field name="model">course_center.student</field>
+            <field name="arch" type="xml">
+                <search string="Student">
+                    <field name="user_id"/>
+                    <field name="gender"/>
+                    <field name="registration_date"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="student_act_window" model="ir.actions.act_window">
+            <field name="name">Students</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">course_center.student</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There are no students. Click here to add a new student.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

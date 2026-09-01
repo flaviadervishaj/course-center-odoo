@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="submission_form_view" model="ir.ui.view">
+            <field name="name">course_center.submission.form</field>
+            <field name="model">course_center.submission</field>
+            <field name="arch" type="xml">
+                <form string="Submission">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="assignment_id"/>
+                            <h1>
+                                <field name="assignment_id" placeholder="Assignment"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="enrollment_id"/>
+                                <field name="submission_date"/>
+                                <field name="file_path"/>
+                                <field name="is_late"/>
+                                <field name="status"/>
+                            </group>
+
+                            <group>
+                                <field name="grade"/>
+                                <field name="graded_by"/>
+                                <field name="graded_at"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group>
+                                <field name="comments"/>
+                            </group>
+
+                            <group>
+                                <field name="feedback"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="submission_tree_view" model="ir.ui.view">
+            <field name="name">course_center.submission.tree</field>
+            <field name="model">course_center.submission</field>
+            <field name="arch" type="xml">
+                <tree string="Submission">
+                    <field name="assignment_id"/>
+                    <field name="enrollment_id"/>
+                    <field name="submission_date"/>
+                    <field name="is_late"/>
+                    <field name="grade"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="submission_search_view" model="ir.ui.view">
+            <field name="name">course_center.submission.search</field>
+            <field name="model">course_center.submission</field>
+            <field name="arch" type="xml">
+                <search string="Submission">
+                    <field name="assignment_id"/>
+                    <field name="enrollment_id"/>
+                    <field name="submission_date"/>
+                    <field name="graded_by"/>
+                    <field name="status"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="submission_act_window" model="ir.actions.act_window">
+            <field name="name">Submissions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">course_center.submission</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There are no submissions. Click here to add a new submission.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
