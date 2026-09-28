@@ -1,6 +1,6 @@
 # Course Center
 
-An academic Odoo 17 module for managing a course center. It models courses, categories, groups, instructors, students, sessions, enrollments, assignments, submissions, attendance, invoices, payments, discounts, and certificates.
+**Status: In development.** This academic Odoo 17 course center project is still being built. The current source defines models and views for courses, categories, groups, instructors, students, sessions, enrollments, assignments, submissions, attendance, invoices, payments, discounts, and certificates.
 
 ## What is in this repository
 
