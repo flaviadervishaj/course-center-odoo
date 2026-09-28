@@ -1,11 +1,11 @@
 {
     'name': 'Course Center',
     'version': '1.0',
-    'summary': 'Course Center',
-    'description': 'Course Center',
+    'summary': 'Course and enrollment management for Odoo 17',
+    'description': 'Academic course center module for courses, groups, sessions, enrollments, attendance, and billing.',
     'category': 'Education',
-    'author': 'Flavia',
-    'website': 'Website',
+    'author': 'Flavia Dervishaj',
+    'website': 'https://github.com/flaviadervishaj/course-center-odoo',
     'depends': ['base'],
 
     'data': [
